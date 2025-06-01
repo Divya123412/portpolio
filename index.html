@@ -2,155 +2,659 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
   <style>
-    body {
-      margin: 5px;
+  .navbar {
+    position:fixed;
+    width:97%;
+    height:10%;
+    color:grey;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin:20px;
+  }
+  .navbar-brand {
+    font-size:xx-large;
+    font-weight:bold;
+  }
+  .navbar-links {
+    list-style:none;
+    margin:10px;
+    padding: 10px;
+    display:flex;
+  }
+  .navbar-links li {
+    margin-right: 40px;
+  }
+  .navbar-links a {
+    color: grey;
+    text-decoration:none;
+    font-size: large;
+  }
+  #home {
   
-      background-color: azure;
-    
-    }
-    header {
-      
-    
-      padding: 30px 30px;
-      text-align: right;
-      font-size: larger;
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      
-    }
-    nav a {
  
-      margin: 0 15px;
-     text-decoration: solid;
-     color:grey;
-    }
-    .Home{
-      text-align: center;
-      padding: 20px;
-      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      font-size: x-large;
+  background-position: center;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+#home h1 {
+  font-size: 39px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+ h2 {
+  margin-bottom:10px;
+  margin-left: 10px;
+  text-align: center;
+  font-weight:bold;
+
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+section#skills{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Righteous", cursive;
+  min-height: 100vh;
+  background-color: #a9c9ff;
+  background-image: linear-gradient(180deg, #a9c9ff 0%, #ffbbec 100%);
+
+  .container {
+    max-width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 35px;
+    margin: 0 auto;
+    padding: 40px 0;
+
+    .card {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      margin: 0 auto;
+      background: #000;
+      border-radius: 15px;
+      box-shadow: 0 15px 60px rgba(0, 0, 0, 0.5);
+
+      .face {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &.face1 {
+          box-sizing: border-box;
+          padding: 20px;
+
+          h2 {
+            margin: 0;
+            padding: 0;
+          }
+
+          .f {
+            background-color:#00fffc;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          .b {
+            background-color: #00fffc;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+          }
+          .t{
+            background-color: #00fffc;
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+          }
+
+
+          
+        }
+
+        &.face2 {
+          transition: 0.5s;
+
+          h2 {
+            margin: 0;
+            padding: 0;
+            font-size:x-large;
+            color:black;
+            transition: 0.5s;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+          }
+        }
+      }
     }
 
-    .Home p{
-      padding: 10px;
-    } 
-    .projects-section {
-    padding: 50px 20px;
-    background-color: #f4f4f4;
+    .card:hover .face.face2 {
+      height: 60px;
+
+      h2 {
+        font-size: 2em;
+      }
+    }
+
+    .card:nth-child(1) .face.face2 {
+      background-image: linear-gradient(
+        40deg,
+        #fc00ff 0%,
+        #00fffc 45%,
+        #fffc00 100%
+      );
+     
+      border-radius: 15px;
+    }
+
+    .card:nth-child(2) .face.face2 {
+      background-image: linear-gradient(
+        40deg,
+        #fc00ff 0%,
+        #00fffc 45%,
+        #fffc00 100%
+      );
+      
+      border-radius: 15px;
+    }
+    .card:nth-child(3) .face.face2 {
+      background-image: linear-gradient(
+        40deg,
+        #fc00ff 0%,
+        #00fffc 45%,
+        #fffc00 100%
+      );
+      
+      border-radius: 15px;
+    }
+
+  }
+}
+
+.certifications-section {
+  max-width: 1200px;
+  background: linear-gradient(to right,  #e0eafc, #cfdef3);
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.certifications-grid {
+  display: grid;
+  gap: 2rem;
+  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+}
+
+
+@media (min-width: 600px) {
+  .certifications-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .certifications-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.cert-card {
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+}
+
+.cert-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 2px solid #0077cc;
+  display: block;
+}
+
+.cert-card h3 {
+  font-size: 1.4rem;
+  margin: 1rem 0 0.5rem;
+  color: #0077cc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.cert-card h3 i {
+  color: #0077cc;
+  font-size: 1.4rem;
+}
+
+.cert-card p {
+  font-size: 1rem;
+  color: #555;
+  padding: 0 1rem;
+}
+
+.btn-download {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+  background-color: #005fa3;
+}
+/* Certificates Section Buttons */
+.cert-btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  margin: 0.2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+}
+
+.cert-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+.about-section {
+  background: #f0f4f8;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.image-container {
+  flex: 0 0 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.text-container {
+  flex: 1;
+  max-width: 700px;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.about-description {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #444;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.resume-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-view-resume,
+.btn-download-resume {
+  background: #007acc;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-view-resume:hover,
+.btn-download-resume:hover {
+  background-color: #005f99;
+}
+
+.btn-view-resume i,
+.btn-download-resume i {
+  margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
     text-align: center;
+  }
+
+  .image-container {
+    margin-bottom: 20px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .about-description {
+    font-size: 16px;
+  }
+
+  .btn-view-resume,
+  .btn-download-resume {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.projects-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
+section#contact {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.projects-container {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+.contact-form-container {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
 }
 
-.project-card {
-    background-color: #fff;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.project-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #555;
 }
 
-.project-card h3 {
-    margin-top: 10px;
-    font-size: 1.5rem;
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
-.project-card p {
-    margin-top: 10px;
+textarea {
+  resize: vertical;
+  min-height: 150px;
 }
 
-    
-    
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
 
-    
-    
-  
-    
-  </style>
+button:hover {
+  background-color: #45a049;
+}
+
+
+
+
+</style>
 </head>
 <body>
-<header>
 
-  <nav>
-    
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">skills</a>
-    <a href="#">projects</a>
-    <a href="#">Contact</a>
-    
+ 
+
+  <nav class="navbar">
+    <div class="navbar-brand">Portfolio</div>
+    <ul class="navbar-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">certificates</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
-  </header>
-
-
-<section class="Home">
-  <h1>Welcome to My Portfolio</h1>
-  <img src="https://img.freepik.com/premium-photo/memoji-beautiful-girl-woman-white-background-emoji_826801-6872.jpg?w=826" height="100" width="100" alt="center" border-radius:solid>
-  <p>I am web developer with a passion for creating beautiful websites.</p>
   
-
-  </section>
   
-
-
-  <section class="About">
-    <h1>About</h1>
-    <p>my name is divya</p>
-
+  
+  <section id="home">
     
   </section>
-  <section class="Skills">
-    <h1>Skills</h1>
-    <img src="https://cdn0.iconfinder.com/data/icons/social-network-9/50/22-1024.png" height="100" width="100" alt="center">
-    <p>HTML stands for Hyper Text Markup Language.<br> HTML is the standard markup language for creating Web pages. <br>HTML describes the structure of a Web page. <br>HTML consists of a series of elements.<br> HTML elements tell the browser how to display the content.</p>
-    <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png" height="100" width="100" alt="center">
-    <p></p>
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjO6Zzx0-W2p-JmGQgqbS7w9fPEG5XE3Xwwg&s" height="100" width="100" alt="center">
-    <p></p>
+  
+  
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="image-container">
+        <img src="./img.jpg" alt="Profile Picture" class="profile-img">
+      </div>
+      <div class="text-container">
+        <h2 class="section-title">About Me</h2>
+        <p class="about-description">
+          I’m a frontend developer passionate about crafting responsive, scalable, and user-friendly web applications. With expertise in React, HTML, CSS, and JavaScript, I focus on delivering seamless digital experiences that solve real-world problems in agriculture, healthcare, and civic engagement. While frontend development is my primary focus, I also have experience in mobile development, particularly Android (Kotlin), allowing me to create cross-platform solutions that enhance accessibility and usability. My goal is to leverage technology to build meaningful, intuitive applications that make a real impact.
+        </p>
+        <div class="resume-buttons">
+          <a href="resume.pdf" class="btn-view-resume">
+            <i class="fa fa-eye"></i> View Resume
+          </a>
+          <a href="resume.pdf" download class="btn-download-resume">
+            <i class="fa fa-download"></i> Download Resume
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  
+  <section id="skills">
+    <div class="container">
+       <div class="card">
+        <div class="face face1">
+          <div class="content">
+            <span class="stars"></span>
+            <h2 class="f">01.HTML<br>02.CSS<br>03.Java-Script<br>04.React</h2>
+            </div>
+        </div>
+        <div class="face face2">
+          <h2>Frontend Technologies</h2>
+        </div>
+      </div>
     
-  </section>
-  <section class="Projects">
-    <div class="project-card">
-      <img src="https://static.vecteezy.com/system/resources/previews/017/693/430/non_2x/csp-letter-logo-design-in-illustration-logo-calligraphy-designs-for-logo-poster-invitation-etc-vector.jpg" alt="Project 1">
-      <h3>Project 1</h3>
-      <p>A description of project 1.</p>
-  </div>
-  <div class="project-card">
-      <img src="project2.jpg" alt="Project 2">
-      <h3>Project 2</h3>
-      <p>A description of project 2.</p>
-  </div>
-  <div class="project-card">
-      <img src="project3.jpg" alt="Project 3">
-      <h3>Project 3</h3>
-      <p>A description of project 3.</p>
-  </div>
-</div>
-</section>
+      <div class="card">
+        <div class="face face1">
+          <div class="content">
+            <span class="stars"></span>
+            <h2 class="b">01.Node.js<br>02.Express.js<br>03.MongoDB<br>04.MySQl</h2>
+            
+          </div>
+        </div>
+        <div class="face face2">
+          <h2>Backend Technologies</h2>
+        </div>
+      </div>
+      <div class="card">
+        <div class="face face1">
+          <div class="content">
+            <span class="stars"></span>
+            <h2 class="t">01.Python<br>02.C Programming</h2>
+           </div>
+        </div>
+        <div class="face face2">
+          <h2>Technical Skills</h2>
+        </div>
+      </div>
+    
+      
+    </section>
+    
+              
+    <section id="certificates">
+      <section id="certifications" class="section certifications-section">
+        <h2>Certifications</h2>
+      
+        <div class="certifications-grid">
+          
+          <div class="cert-card">
+            <img src="./C.jpg" alt="Certification 2">
+            <h3><i class="fas fa-award"></i> Android App Development</h3>
+            <p>Completed the workshop and built an Android app using Kotlin.</p>
+            <div class="cert-buttons">
+              <a href="./C.pdf" class="cert-btn">View Certificate</a>
+            </div>
+            <div class="cert-card">
+            <img src="" alt="Certification 6">
+            <h3><i class="fas fa-award"></i> Hackerrank - JavaScript</h3>
+            <p>Completed Hackerrank JavaScript Certification.
+            </p>
+            <div class="cert-buttons">
+              <a href="./HCJB.pdf" class="cert-btn">View Certificate</a>
+            </div>
+          </div>
+        </div>
+          </div>
+          <div class="cert-card">
+            <img src="./Nptel.jpg" alt="Certification 1">
+            <h3><i class="fas fa-award"></i>CodeSoft</h3>
+            <p>Completed a frontend development course including HTML5, CSS, and JS.</p>
+            <div class="cert-buttons">
+              <a href="./Nptel.pdf" class="cert-btn">View Certificate</a>
+            </div>
+          </div>
 
-  </section>
-  <section class="Contact">
+          <div class="cert-card">
+            <img src="./JS.jpg" alt="Certification 3">
+            <h3><i class="fas fa-award"></i> Hackerrank - JavaScript </h3>
+            <p>Completed Hackerrank JavaScript Certification</p>
+            <div class="cert-buttons">
+              <a href="./JS.pdf" class="cert-btn">View Certificate</a>
+            </div>
+          </div>
+      
+          <div class="cert-card">
+            <img src="img3.png" alt="Certification 4">
+            <h3><i class="fas fa-award"></i> Python Programming</h3>
+            <p>Certified in basics of Python programming.</p>
+            <div class="cert-buttons">
+              <a href="cert3.pdf" class="cert-btn">View Certificate</a>
+            </div>
+          </div>
+      
 
-  </section>
+      
+          <div class="cert-card">
+            <img src="img5.png" alt="Certification 5">
+            <h3><i class="fas fa-award"></i> NPTEL - JOY OF COMPUTING USING PYTHON</h3>
+            <p>Completed the SWAYAM - NPTEL Certification of Joy of computing using python.</p>
+            <div class="cert-buttons">
+              <a href="cert5.pdf" class="cert-btn">View Certificate</a>
+            </div>
+          </div>
+      
+          
+      </section>
+      
+        <section id="projects">
+      
+          
+        </section>
+       
+  <section class="contact-form-container">
+    <h2>Contact Us</h2>
+    <form action="submit_form.php" method="POST">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name.." required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email.." required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" placeholder="Write your message.." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  
 
 
+        <section="contact">  
+    
 
-
+        
+  <footer class="mt-5 py-3 bg-dark text-white text-center">
+    <p class="mb-0">&copy; 2025 My Portfolio | Divya. All rights reserved.</p>
+  </footer>
 </body>
 </html>
